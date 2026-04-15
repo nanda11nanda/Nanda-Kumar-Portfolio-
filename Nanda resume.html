@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>J. Nanda Kumar | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #0f1f3d;
+      --navy-mid: #1B3A6B;
+      --blue-accent: #2563eb;
+      --blue-light: #60a5fa;
+      --gold: #f59e0b;
+      --cream: #f8f5f0;
+      --white: #ffffff;
+      --text-dark: #1a1a2e;
+      --text-mid: #475569;
+      --text-light: #94a3b8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 4rem;
+      background: rgba(15,31,61,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--gold); }
+    nav ul { list-style: none; display: flex; gap: 2.5rem; }
+    nav ul a {
+      text-decoration: none; color: rgba(255,255,255,0.7);
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; transition: color 0.2s;
+    }
+    nav ul a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, #162d5a 60%, #1e3a7a 100%);
+      display: flex; align-items: center;
+      padding: 8rem 4rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -200px; right: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -100px; left: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-content { max-width: 700px; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(245,158,11,0.15);
+      border: 1px solid rgba(245,158,11,0.4);
+      color: var(--gold);
+      padding: 0.4rem 1rem; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 900; line-height: 1.05;
+      color: var(--white); margin-bottom: 1.2rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub {
+      font-size: 1.15rem; color: rgba(255,255,255,0.65);
+      line-height: 1.7; margin-bottom: 2.5rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+    .hero-btns {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+    .btn-primary {
+      background: var(--blue-accent); color: white;
+      padding: 0.85rem 2rem; border-radius: 8px;
+      text-decoration: none; font-weight: 600; font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(37,99,235,0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,99,235,0.45); }
+    .btn-outline {
+      border: 1.5px solid rgba(255,255,255,0.3); color: white;
+      padding: 0.85rem 2rem; border-radius: 8px;
+      text-decoration: none; font-weight: 500; font-size: 0.9rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(245,158,11,0.08); }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 4rem; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--blue-accent);
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; color: var(--navy);
+      margin-bottom: 3rem; line-height: 1.15;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    }
+    .about-text p {
+      color: var(--text-mid); line-height: 1.8; font-size: 1rem; margin-bottom: 1.2rem;
+    }
+    .about-meta { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 2rem; }
+    .meta-item {
+      display: flex; align-items: center; gap: 0.8rem;
+      padding: 0.7rem 1rem; border-radius: 8px;
+      background: var(--cream); border-left: 3px solid var(--blue-accent);
+    }
+    .meta-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--text-light); letter-spacing: 0.08em; }
+    .meta-value { font-size: 0.9rem; font-weight: 500; color: var(--navy); }
+    .about-right { display: flex; flex-direction: column; gap: 1.5rem; }
+    .stat-card {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: 16px; padding: 2rem;
+      color: white; position: relative; overflow: hidden;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute; top: -30px; right: -30px;
+      width: 100px; height: 100px;
+      background: rgba(255,255,255,0.05); border-radius: 50%;
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem; font-weight: 900; color: var(--gold);
+    }
+    .stat-desc { font-size: 0.85rem; color: rgba(255,255,255,0.65); margin-top: 0.3rem; }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--cream); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .skill-card {
+      background: var(--white); border-radius: 14px;
+      padding: 1.8rem; border: 1px solid rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative; overflow: hidden;
+    }
+    .skill-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .skill-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--blue-accent), var(--blue-light));
+    }
+    .skill-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .skill-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-accent); margin-bottom: 0.4rem; }
+    .skill-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .skill-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--white); }
+    .exp-card {
+      background: var(--cream); border-radius: 16px;
+      padding: 2.5rem; border: 1px solid rgba(0,0,0,0.06);
+      position: relative;
+    }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+    .exp-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); }
+    .exp-company { font-size: 0.9rem; color: var(--blue-accent); font-weight: 600; margin-top: 0.3rem; }
+    .exp-date {
+      background: var(--navy); color: var(--gold);
+      padding: 0.4rem 1rem; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 600; white-space: nowrap;
+    }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .exp-bullets li {
+      display: flex; gap: 0.7rem; align-items: flex-start;
+      font-size: 0.9rem; color: var(--text-mid); line-height: 1.6;
+    }
+    .exp-bullets li::before { content: '▸'; color: var(--blue-accent); flex-shrink: 0; margin-top: 0.1rem; }
+    .metric-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      color: white; padding: 0.6rem 1.2rem; border-radius: 8px;
+      font-size: 0.85rem; font-weight: 600; margin-top: 1.2rem;
+      border-left: 3px solid var(--gold);
+    }
+
+    /* ── FRAUD KNOWLEDGE ── */
+    #fraud { background: var(--cream); }
+    .fraud-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+    .fraud-card {
+      background: var(--white); border-radius: 12px; padding: 1.5rem;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-left: 4px solid var(--blue-accent);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .fraud-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+    .fraud-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+    .fraud-card p { font-size: 0.83rem; color: var(--text-mid); line-height: 1.6; }
+    .fraud-badge {
+      display: inline-block; background: rgba(37,99,235,0.08);
+      color: var(--blue-accent); padding: 0.2rem 0.6rem; border-radius: 4px;
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ── EDUCATION ── */
+    #education { background: var(--white); }
+    .edu-card {
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      border-radius: 16px; padding: 2.5rem; color: white;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;
+    }
+    .edu-degree { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--gold); margin-bottom: 0.4rem; }
+    .edu-field { font-size: 1rem; font-weight: 600; color: white; margin-bottom: 0.4rem; }
+    .edu-uni { font-size: 0.85rem; color: rgba(255,255,255,0.65); }
+    .edu-year {
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px; padding: 1rem 1.5rem; text-align: center;
+    }
+    .edu-year-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--gold); }
+    .edu-year-label { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 0.2rem; }
+
+    /* ── INTERACTIVE ── */
+    #interactive { background: var(--cream); }
+    .interactive-wrapper { max-width: 720px; margin: 0 auto; }
+    .interactive-card {
+      background: var(--white); border-radius: 20px;
+      padding: 3rem; border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+      text-align: center;
+    }
+    .interactive-icon { font-size: 3.5rem; margin-bottom: 1.2rem; }
+    .interactive-card h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.6rem;
+      font-weight: 700; color: var(--navy); margin-bottom: 1rem;
+    }
+    .interactive-card p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; max-width: 480px; margin: 0 auto; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--navy); }
+    #contact .section-title { color: var(--white); }
+    #contact .section-label { color: var(--gold); }
+    .contact-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2rem; }
+    .contact-desc { color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.7; max-width: 480px; }
+    .linkedin-btn {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      background: #0077B5; color: white;
+      padding: 1rem 2.5rem; border-radius: 10px;
+      text-decoration: none; font-weight: 700; font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(0,119,181,0.4);
+    }
+    .linkedin-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,119,181,0.55); }
+    .linkedin-icon { width: 22px; height: 22px; fill: white; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080f1e; color: rgba(255,255,255,0.4);
+      text-align: center; padding: 1.5rem;
+      font-size: 0.82rem; letter-spacing: 0.05em;
+    }
+    footer span { color: var(--gold); font-weight: 600; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      nav ul { gap: 1.2rem; }
+      nav ul a { font-size: 0.75rem; }
+      .hero { padding: 7rem 1.5rem 3rem; }
+      section { padding: 3.5rem 1.5rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .exp-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">J<span>.</span>NK</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#fraud">Fraud</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#interactive">Interactive</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">Process Associate · Content Moderator</div>
+    <h1>J. Nanda <span>Kumar</span></h1>
+    <p class="hero-sub">
+      A process professional passionate about Trust &amp; Safety, digital content moderation,
+      fraud awareness, and the future of AI-powered media.
+    </p>
+    <div class="hero-btns">
+      <a href="#experience" class="btn-primary">View Experience</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="section-label">About</p>
+      <h2 class="section-title">Who I Am</h2>
+      <p>A process professional with an educational background in commerce and computers. Passionate about content integrity, digital content creation, and personal productivity.</p>
+      <p>Actively working in Trust &amp; Safety operations — reviewing digital content, enforcing community guidelines, and building expertise in fraud detection and platform security.</p>
+      <div class="about-meta">
+        <div class="meta-item">
+          <div>
+            <div class="meta-label">Location</div>
+            <div class="meta-value">Hyderabad, Telangana (Currently)</div>
+          </div>
+        </div>
+        <div class="meta-item">
+          <div>
+            <div class="meta-label">Role</div>
+            <div class="meta-value">Process Associate — Content Moderator</div>
+          </div>
+        </div>
+        <div class="meta-item">
+          <div>
+            <div class="meta-label">Company</div>
+            <div class="meta-value">Genpact</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="stat-card">
+        <div class="stat-num">7+</div>
+        <div class="stat-desc">Months of hands-on Content Moderation experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">100+</div>
+        <div class="stat-desc">Flagged cases processed daily with 97% accuracy rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">6</div>
+        <div class="stat-desc">Fraud types understood & applied in Trust & Safety operations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label">Skills</p>
+  <h2 class="section-title">What I Do</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">🛡️</div>
+      <div class="skill-tag">Operational</div>
+      <h3>Content Moderation</h3>
+      <p>Reviewing and managing digital content to ensure platform safety and community standards compliance.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">⚖️</div>
+      <div class="skill-tag">Operational</div>
+      <h3>Trust & Safety Operations</h3>
+      <p>Identifying and addressing policy violations, misinformation, and harmful content across platforms.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🔍</div>
+      <div class="skill-tag">Analytical</div>
+      <h3>Fraud Detection</h3>
+      <p>Monitoring transactions, detecting suspicious patterns, and investigating flagged cases using fraud detection tools.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🎬</div>
+      <div class="skill-tag">Creative</div>
+      <h3>Digital Content Creation</h3>
+      <p>Producing engaging digital content for platforms like Instagram and YouTube with a modern, AI-powered approach.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">💬</div>
+      <div class="skill-tag">Beginner</div>
+      <h3>Prompt Engineering</h3>
+      <p>Actively learning to craft effective prompts to leverage AI tools for smarter content workflows.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">Experience</p>
+  <h2 class="section-title">Work History</h2>
+  <div class="exp-card">
+    <div class="exp-header">
+      <div>
+        <div class="exp-title">Process Associate</div>
+        <div class="exp-company">Genpact · Hyderabad, Telangana</div>
+      </div>
+      <div class="exp-date">Sep 2025 — Present (7 Months)</div>
+    </div>
+    <ul class="exp-bullets">
+      <li>Processed 100+ flagged cases daily with 97% accuracy rate, ensuring strict compliance with platform community standards.</li>
+      <li>Performed Trust &amp; Safety operations by identifying and addressing policy violations and harmful content.</li>
+      <li>Monitored transactions and detected suspicious patterns using fraud detection tools.</li>
+      <li>Investigated flagged cases, assessed risks, and ensured regulatory compliance.</li>
+      <li>Developed prevention strategies, maintained detailed reports, and collaborated across cross-functional teams.</li>
+      <li>Handled inappropriate content with maturity and professionalism, maintaining emotional resilience.</li>
+    </ul>
+    <div class="metric-badge">📊 100+ cases/day · 97% accuracy · 7 months experience</div>
+  </div>
+</section>
+
+<!-- FRAUD KNOWLEDGE -->
+<section id="fraud">
+  <p class="section-label">Fraud Awareness</p>
+  <h2 class="section-title">Fraud Types — Basic Knowledge</h2>
+  <div class="fraud-grid">
+    <div class="fraud-card">
+      <div class="fraud-badge">Identity</div>
+      <h4>Account Takeover (ATO)</h4>
+      <p>Unauthorized access to user accounts via stolen credentials, phishing links, or brute-force attacks.</p>
+    </div>
+    <div class="fraud-card">
+      <div class="fraud-badge">Social</div>
+      <h4>Phishing & Social Engineering</h4>
+      <p>Deceptive tactics used to manipulate users into revealing sensitive information or clicking malicious links.</p>
+    </div>
+    <div class="fraud-card">
+      <div class="fraud-badge">Financial</div>
+      <h4>Payment & Transaction Fraud</h4>
+      <p>Fake or unauthorized financial transactions on platforms, including stolen card usage and payment manipulation.</p>
+    </div>
+    <div class="fraud-card">
+      <div class="fraud-badge">Identity</div>
+      <h4>Identity Fraud</h4>
+      <p>Use of false or stolen personal identities to bypass verification systems and gain unauthorized access.</p>
+    </div>
+    <div class="fraud-card">
+      <div class="fraud-badge">Platform</div>
+      <h4>Content Spam & Fake Accounts</h4>
+      <p>Coordinated inauthentic behavior involving bot accounts, spam content, and platform policy violations.</p>
+    </div>
+    <div class="fraud-card">
+      <div class="fraud-badge">Financial</div>
+      <h4>Chargeback Fraud</h4>
+      <p>Disputed transactions used to fraudulently reclaim payments after receiving goods or services.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="section-label">Education</p>
+  <h2 class="section-title">Academic Background</h2>
+  <div class="edu-card">
+    <div>
+      <div class="edu-degree">Bachelor's Degree</div>
+      <div class="edu-field">Bachelor of Commerce in Computers</div>
+      <div class="edu-uni">Vikrama Simhapuri University (VSU) · Nellore, Andhra Pradesh</div>
+    </div>
+    <div class="edu-year">
+      <div class="edu-year-num">2025</div>
+      <div class="edu-year-label">Year of Passing</div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE -->
+<section id="interactive">
+  <p class="section-label">Interactive</p>
+  <h2 class="section-title">Coming Soon</h2>
+  <div class="interactive-wrapper">
+    <div class="interactive-card">
+      <div class="interactive-icon">🚀</div>
+      <h3>Something Exciting is Being Built Here</h3>
+      <p>This section is reserved for an interactive experience. Stay tuned — more coming soon!</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-center">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="contact-desc">Feel free to connect with me on LinkedIn for any professional opportunities, collaborations, or discussions.</p>
+    <a href="https://www.linkedin.com/in/nanda-kumar-a9537124a" target="_blank" class="linkedin-btn">
+      <svg class="linkedin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+      Connect on LinkedIn
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 &nbsp;<span>@j.nanda kumar</span></p>
+</footer>
+
+</body>
+</html>
