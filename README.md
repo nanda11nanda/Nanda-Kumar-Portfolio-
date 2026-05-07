@@ -17,7 +17,7 @@ A clean, responsive personal portfolio website built with pure HTML & CSS. Desig
 Process Associate · Content Moderator at **Genpact**, Hyderabad  
 B.Com (Computers) — Vikrama Simhapuri University, 2025
 
-- 7+ months of hands-on Content Moderation experience  
+- 8+ months of hands-on Content Moderation experience  
 - 100+ flagged cases processed daily at 97% accuracy  
 - Expertise across 6 fraud types in Trust & Safety operations
 
