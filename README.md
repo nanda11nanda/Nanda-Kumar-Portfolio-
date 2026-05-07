@@ -1,99 +1,122 @@
-# J. Nanda Kumar — Personal Portfolio
+<div align="center">
 
-A clean, responsive personal portfolio website built with pure HTML & CSS. Designed to showcase professional experience in Trust & Safety, Content Moderation, and Fraud Detection.
+<img src="https://nanda11nanda.github.io/Nanda-Kumar-Portfolio-/assets/profile.jpg" alt="J. Nanda Kumar" width="150" style="border-radius: 50%;" />
 
----
+# 👋 Hi, I'm J. Nanda Kumar
 
-## 🌐 Live Preview
+### Process Associate · Content Moderator · Digital Content Creator
 
-> Deploy via [GitHub Pages](https://pages.github.com/) to get a live link.  
-> Go to **Settings → Pages → Source → main branch → / (root)** and save.
+[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-Visit_Now-blue?style=for-the-badge)](https://nanda11nanda.github.io/Nanda-Kumar-Portfolio-/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nanda-kumar-a9537124a)
+[![YouTube](https://img.shields.io/badge/YouTube-Mana_Thought-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@manathought)
+[![Telegram](https://img.shields.io/badge/Telegram-Chat-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/7595774240)
 
----
+📍 Hyderabad, Telangana, India
 
-## 👤 About
-
-**J. Nanda Kumar**  
-Process Associate · Content Moderator at **Genpact**, Hyderabad  
-B.Com (Computers) — Vikrama Simhapuri University, 2025
-
-- 8+ months of hands-on Content Moderation experience  
-- 100+ flagged cases processed daily at 97% accuracy  
-- Expertise across 6 fraud types in Trust & Safety operations
+</div>
 
 ---
 
-## 📁 Project Structure
+## 🙋‍♂️ About Me
 
-```
-📦 portfolio
- ┣ 📄 index.html      # Main portfolio file (all-in-one HTML + CSS)
- ┗ 📄 README.md       # This file
-```
+A process professional with a background in Commerce & Computers, passionate about **Trust & Safety**, **digital content moderation**, **fraud awareness**, and **AI-powered media**. I actively review digital content, enforce community guidelines, and build expertise in fraud detection and platform security — while also creating engaging content on YouTube.
 
 ---
 
-## ✨ Sections
+## 💼 Work Experience
 
-| Section | Description |
+### Process Associate — Content Moderator
+**Genpact · Hyderabad, Telangana**
+*Sep 2025 – Present (7+ Months)*
+
+- ✅ Processed **100+ flagged cases daily** with a **97% accuracy rate**
+- 🛡️ Performed Trust & Safety operations — identifying policy violations and harmful content
+- 🔍 Monitored transactions and detected suspicious patterns using fraud detection tools
+- 📋 Investigated flagged cases, assessed risks, and ensured regulatory compliance
+- 🤝 Collaborated across cross-functional teams and maintained detailed reports
+- 💪 Handled sensitive content with professionalism and emotional resilience
+
+---
+
+## 🛠️ Skills
+
+| Category | Skill |
 |---|---|
-| **Hero** | Name, role badge, and CTA buttons |
-| **About** | Bio, location, role, stat cards |
-| **Skills** | Content Moderation, Trust & Safety, Fraud Detection, Digital Content Creation, Prompt Engineering |
-| **Experience** | Genpact — Process Associate role details |
-| **Fraud Awareness** | 6 fraud types with explanations |
-| **Education** | B.Com (Computers), VSU, 2025 |
-| **Interactive** | Coming soon section |
-| **Contact** | LinkedIn connection link |
+| 🛡️ Operational | Content Moderation |
+| ⚖️ Operational | Trust & Safety Operations |
+| 🔍 Analytical | Fraud Detection |
+| 🎬 Creative | Digital Content Creation |
+| 💬 Learning | Prompt Engineering |
 
 ---
 
-## 🛠️ Built With
+## 🔍 Fraud Awareness Knowledge
 
-- **HTML5** — Semantic structure
-- **CSS3** — Custom properties, Grid, Flexbox, animations
-- **Google Fonts** — Playfair Display + DM Sans
-- No frameworks. No dependencies. Just one file.
-
----
-
-## 🚀 How to Use
-
-1. **Clone the repo**
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   ```
-
-2. **Open locally**
-   ```bash
-   open index.html
-   ```
-   Or just double-click `index.html` in your file explorer.
-
-3. **Deploy to GitHub Pages**
-   - Push to GitHub
-   - Go to **Settings → Pages**
-   - Set source to `main` branch, root folder
-   - Your site will be live at `https://your-username.github.io/your-repo-name`
+| Type | Description |
+|---|---|
+| 🔐 Account Takeover (ATO) | Unauthorized account access via phishing or stolen credentials |
+| 🎣 Phishing & Social Engineering | Deceptive tactics to steal sensitive user information |
+| 💳 Payment & Transaction Fraud | Fake or unauthorized financial transactions on platforms |
+| 🪪 Identity Fraud | Use of false identities to bypass verification systems |
+| 🤖 Content Spam & Fake Accounts | Bot accounts, spam content, and policy violations |
+| 💸 Chargeback Fraud | Fraudulent disputes after receiving goods or services |
 
 ---
 
-## ✏️ Customization
+## 🎓 Education
 
-To update the portfolio with your own details, open `index.html` and edit:
-
-- **Name / role** — Hero section near the top of `<body>`
-- **About text** — Inside `<section id="about">`
-- **Experience bullets** — Inside `<section id="experience">`
-- **LinkedIn URL** — Find `https://www.linkedin.com/in/nanda-kumar-a9537124a` and replace with yours
-- **Colors** — Edit the CSS variables inside `:root { }` at the top of `<style>`
+**Bachelor of Commerce in Computers**
+Vikrama Simhapuri University (VSU) · Nellore, Andhra Pradesh
+*Year of Passing: 2025*
 
 ---
 
-## 📬 Contact
+## 📊 Highlights
 
-Connect on LinkedIn → [J. Nanda Kumar](https://www.linkedin.com/in/nanda-kumar-a9537124a)
+<div align="center">
+
+| 📁 100+ Cases/Day | 🎯 97% Accuracy | ⏳ 7+ Months Experience | 🔒 6 Fraud Types |
+|---|---|---|---|
+
+</div>
 
 ---
 
-*© 2025 @j.nanda kumar*
+## 🎬 YouTube — Mana Thought 💡
+
+I run a Telugu-language YouTube channel focused on **mythology, motivation, and spiritual content**.
+
+[![YouTube Channel](https://img.shields.io/badge/▶_Watch_on_YouTube-Mana_Thought-FF0000?style=for-the-badge&logo=youtube)](https://youtube.com/@manathought)
+
+> 244+ Subscribers · Shorts · Spiritual & Mythological Content
+
+---
+
+## 🌐 Portfolio Website
+
+This GitHub repository hosts my personal portfolio website — built with HTML, CSS & JavaScript.
+
+- 📋 Form submissions are routed directly to my **Telegram bot**
+- 📊 Visitor details and contact form data are tracked in real-time
+- 🔄 Updates are deployed automatically via **GitHub Pages**
+
+🔗 **Live Site:** [nanda11nanda.github.io/Nanda-Kumar-Portfolio-/](https://nanda11nanda.github.io/Nanda-Kumar-Portfolio-/)
+
+---
+
+## 📬 Contact Me
+
+| Platform | Link |
+|---|---|
+| 🌐 Portfolio | [Visit Website](https://nanda11nanda.github.io/Nanda-Kumar-Portfolio-/) |
+| 💼 LinkedIn | [nanda-kumar-a9537124a](https://www.linkedin.com/in/nanda-kumar-a9537124a) |
+| 📺 YouTube | [@manathought](https://youtube.com/@manathought) |
+| ✈️ Telegram | [Chat with me](https://t.me/7595774240) |
+
+---
+
+<div align="center">
+
+*© 2025 @j.nanda kumar · Made with ❤️ from Hyderabad*
+
+</div>
